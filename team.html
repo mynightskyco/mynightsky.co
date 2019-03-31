@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Our Team - MyNightSky</title>
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="assets/styles/main.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="assets/styles/theme.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!--==========================
+  Header
+============================-->
+<nav class="site-header sticky-top">
+<div class="container d-flex flex-column flex-md-row justify-content-between">
+<a href="index.html">
+    <img class="header__logo" src="assets/images/mns-logo.png" alt="">
+</a>
+<a class="py-2 d-none d-md-inline-block" href="about.html">About</a>
+<a class="py-2 d-none d-md-inline-block" href="team.html">Our Team</a>
+<a class="py-2 d-none d-md-inline-block" href="contact.html">Contact</a>
+</div>
+</nav>
+
+<!--==========================
+  Team
+============================-->
+<div :class="['container', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']" id="app">
+  <div class="team-container">
+
+    <div class="person-list">
+      <div class="person" v-for="(person,index) in persons" @click="selectPerson(index,$event)"><img class="person-img" :src="person.photo">
+        <div class="person-details">
+          <h2 class="person-title">{{person.name}}</h2>
+          <p class="person-desc">{{person.title}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-detail">
+    <div class="team-detail-inner" v-if="isOk">
+      <div class="team-detail-left" :style=`background-image:url(${selectedPersonData.photo})`>
+        <div class="team-detail-photo"><img :src="selectedPersonData.photo" alt="">
+        </div>
+      </div>
+      <div class="team-detail-right">
+        <div class="team-detail-bio">
+          <div class="team-detail-header">
+            <h2 class="person-title">{{selectedPersonData.name}}</h2>
+            <p class="person-desc">{{selectedPersonData.title}}</p>
+            <div class="social">
+              <a :href="selectedPersonData.social.facebook" target="_blank" class="ion-social-facebook"></a>
+              <a :href="selectedPersonData.social.twitter" target="_blank" class="ion-social-twitter"></a>
+              <a href="selectedPersonData.social.linkedin" target="_blank" class="ion-social-linkedin"></a>
+            </div>
+          </div>
+          <div class="team-detail-bio-content" v-html="selectedPersonData.bio">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js"></script>
+<script src="assets/scripts/team.js"></script>
+
+</body>
+</html>
