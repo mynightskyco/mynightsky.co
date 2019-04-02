@@ -1,13 +1,40 @@
 /* Header */
 
-.site-header {
-    padding: 10px 0;
+.header {
+    display: flex;
+    position: sticky;
+    padding: 20px 0;
     background: #FFF;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-.header__logo {
-    max-height: 40px;
+.header__logo img {
+    max-height: 30px;
 }
+
+.header__navigation {
+
+}
+
+.header__navigation a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header__navigation a:last-of-type {
+    margin: 0 0 0 10px;
+}
+
+.header__navigation a:hover {
+    color: #444;
+    text-decoration: underline;
+}
+
+
 
 /* Hero */
 
@@ -15,21 +42,14 @@
     text-align: center;
     display: block;
     position: relative;
-    padding: 150px 0 160px;
+    padding: 200px 0 160px;
+    height: 600px;
     overflow: hidden;
 }
 
-.hero::after {
-  content: "";
-  background-image: url('../images/hero.jpg');
-  background-position: center;
-  opacity: 0.25;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 2;
+.hero canvas {
+    height: 600px !important;
+    width: 100% !important;
 }
 
 .hero__inner {
@@ -71,9 +91,26 @@
     transition: all 0.5s ease-in-out 0s;
 }
 
+/* Mission */
+
+.mission {
+    padding: 80px 200px;
+}
+
+
+
 /* Footer */
 
-.footer__logo {
-    max-height: 30px;
-    margin: 0 0 15px 0;
+.footer {
+    display: flex;
+    padding: 20px 0;
+    background: #FFF;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.footer__logo img {
+    max-height: 25px;
 }
