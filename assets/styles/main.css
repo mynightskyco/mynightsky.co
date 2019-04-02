@@ -39,16 +39,17 @@
 /* Hero */
 
 .hero {
+    display: flex;
     text-align: center;
-    display: block;
     position: relative;
-    padding: 200px 0 160px;
-    height: 600px;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
     overflow: hidden;
 }
 
 .hero canvas {
-    height: 600px !important;
+    height: 550px !important;
     width: 100% !important;
 }
 
