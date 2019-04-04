@@ -18,26 +18,21 @@
         <nav class="header__navigation">
             <a href="problem.html">The Problem</a>
             <a href="mission.html">Our Mission</a>
-            <a href="about.html">About Us</a>
             <a class="active" href="team.html">Our Team</a>
             <a href="contact.html">Contact</a>
         </nav>
     </section>
     <!-- / -->
 
+    <section class="title container">
+        <h2>Our Team</h2>
+        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    </section>
 
-
-
-
-
-
-
-    <!--==========================
-      Team
-    ============================-->
+    <!-- Team -->
     <div :class="['container', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']" id="app">
-      <div class="team-container">
 
+      <div class="team-container">
         <div class="person-list">
           <div class="person" v-for="(person,index) in persons" @click="selectPerson(index,$event)"><img class="person-img" :src="person.photo">
             <div class="person-details">
@@ -47,6 +42,7 @@
           </div>
         </div>
       </div>
+
       <div class="team-detail">
         <div class="team-detail-inner" v-if="isOk">
           <div class="team-detail-left" :style=`background-image:url(${selectedPersonData.photo})`>
@@ -70,7 +66,11 @@
           </div>
         </div>
       </div>
+
     </div>
+    <!-- / -->
+
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>

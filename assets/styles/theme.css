@@ -1181,6 +1181,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   opacity: 0;
   visibility: hidden;
   box-sizing: border-box;
+  background: #FFF;
 }
 .team-detail-bio-content p {
   margin-bottom: 15px;
@@ -1242,13 +1243,12 @@ body.mobile-nav-active #mobile-nav-toggle i {
   min-height: 100%;
   display: flex;
   align-items: center;
-  padding-right: 10%;
+  padding: 50px;
   position: relative;
   right: 0;
   flex-wrap: wrap;
 }
 .team-detail-right .person-title {
-  font-family: "Yeseva One", cursive;
   font-size: 2.2em;
 }
 .container-ready .team-detail {
