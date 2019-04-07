@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MyNightSky</title>
+        <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/styles/main.css" rel="stylesheet">
+        <link href="assets/styles/theme.css" rel="stylesheet">
+    </head>
+<body>
+
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <a class="header__logo" href="index.html">
+                <!-- <img src="assets/images/global/MyNightSky_Horizontal_Logotype_Dark_Color.svg" alt="MyNightSky Logo"> -->
+                <img src="assets/images/global/MyNightSky_Horizontal_Logotype_Light_Color.svg" alt="MyNightSky Logo">
+            </a>
+            <nav class="header__navigation">
+                <a href="problem.html">The Problem</a>
+                <a href="mission.html">Our Mission</a>
+                <a href="team.html">Our Team</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </section>
+    <!-- / -->
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero__inner">
+            <h1 class="hero__title">Every last pieace.</h1>
+            <p class="hero__subtitle">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <a class="hero__cta" href="about.html">Learn about our mission to clean up space</a>
+        </div>
+        <div id="hero--home"></div>
+    </div>
+    <!-- / -->
+
+    <!-- Mission -->
+    <section class="title">
+        <div class="container">
+            <!-- <h2>Our Mission</h2>-->
+            <p>MyNightSky is a start-up working to aid in the removal of space debris through the design and manufacturing of a fully functional satellite. In accordance to the European Space Agency’s Clean Space Initiative, our team is working towards a cleaner and more accessible space by involving ourselves in the mitigation and removal processes.</p>
+        </div>
+    </section>
+    <!-- / -->
+
+    <!-- ? -->
+    <section>
+        <div class="container">
+            <img class="img-fluid" src="assets/images/home/Night-Sky.jpg" alt="">
+        </div>
+    </section>
+    <!-- / -->
+
+
+    <!-- Points -->
+    <section id="get-started" class="points padd-section text-center wow fadeInUp">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="">
+              <h4>Donec sed odio dui</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="">
+              <h4>Donec sed odio dui</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="">
+              <h4>Donec sed odio dui</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ? -->
+    <section>
+        <div class="container">
+            <img class="img-fluid" src="assets/images/home/Earth.jpg" alt="">
+        </div>
+    </section>
+    <!-- / -->
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <small>
+            <span>MyNightSky © 2018-2019</span>
+
+        </small>
+        <img class="footer__logo" src="assets/images/global/MyNightSky_Emblem_Dark.svg" alt="">
+    </footer>
+    <!-- / -->
+
+    <script src="js/ico.js"></script>
+    <script>
+    	let animation = new explosion.default(
+    		'hero--home', // id of DOM el
+    		{
+    			surface: '000000',
+    			inside: 'DE008D',
+    			background: '000000',
+    			onLoad: () => {
+                    document.body.classList.remove('loading');
+                }
+    		}
+    	);
+
+    	let targetMouseX = 0, mouseX = 0, ta = 0;
+    	const sign = function(n) { return n === 0 ? 1 : n/Math.abs(n); };
+    	document.addEventListener('mousemove',(e) => {
+    	  targetMouseX = 2*(e.clientX - animation.width/2)/animation.width;
+    	});
+
+    	document.addEventListener('touchmove',(e) => {
+    	  targetMouseX = ( e.touches[0].clientX / animation.width ) * 2 - 1;
+    	});
+
+    	function draw(){
+    		if(animation){
+    			mouseX += (targetMouseX - mouseX)*0.05;
+    			ta = Math.abs(mouseX);
+    			animation.settings.progress = ta;
+    			animation.scene.rotation.y = Math.PI/2 - ta*(2 - ta)*Math.PI * sign(mouseX);
+    			animation.scene.rotation.z = Math.PI/2 - ta*(2 - ta)*Math.PI * sign(mouseX);
+    		}
+    		window.requestAnimationFrame(draw);
+    	}
+    	draw()
+
+    </script>
+
+</body>
+</html>
