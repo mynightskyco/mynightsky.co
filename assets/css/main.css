@@ -51,6 +51,9 @@
  *
  * =================================================================== */
 
+.red {
+    color: red !important;
+}
 
 /* ===================================================================
  * # base style overrides
@@ -2277,7 +2280,7 @@ html.no-csstransitions .home-content__main {
   width: 48px;
   line-height: 48px;
   border-radius: 50%;
-  box-shadow: 0 0 0 18px #ffffff;
+  /* box-shadow: 0 0 0 18px #ffffff; */
   position: absolute;
   left: 20px;
   top: 0;
@@ -2890,7 +2893,7 @@ html.no-csstransitions .home-content__main {
   padding-top: 4.2rem;
   padding-bottom: 4.2rem;
   background-color: #050505;
-  background-image: url(../images/stats-bg.jpg);
+  background-image: url(../images/MyNightSky_Space-Debris-in-orbit.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
